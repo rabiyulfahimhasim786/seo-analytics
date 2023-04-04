@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tag Generator</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="icon" type="image/x-icon" href="{% static "image/favicon.svg" %}">
+    <!-- seo -->
+    <meta name="title" content="Meta Tag Generator">
+    <meta name="description" content="Generate all essential meta tags for your website in seconds">
+    <meta name="keywords"
+        content="meta tag generator,meta tag generator for blogger,meta tag generator seo,meta tag generator for seo,seo meta tag generator,meta tag generator google,free meta tag generator google,html meta tag generator google,meta description generator,meta description generator from url,seo meta description generator,best free meta description generator,blogger meta description generator,meta tag in html example">
+    <meta name="author" content="Coder Harsh">
+    <meta property="og:url" content="https://meta-tag-generator.coderharsh.in">
+    <meta property="og:title" content="Meta Tag Generator">
+    <meta property="og:description" content="Generate all essential meta tags for your website in seconds">
+    <meta property="og:image" itemprop="image"
+        content="https://meta-tag-generator.coderharsh.in/image/meta-tag-generator.jpg">
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="420" />
+    <meta http-equiv="refresh" content="3000000">
+
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index,follow">
+    <!-- seo -->
+    <!-- font awesome kit -->
+    <script src="https://kit.fontawesome.com/721abd87bb.js" crossorigin="anonymous"></script>
+    <!-- font awesome kit -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HTJDQ9LJ3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8HTJDQ9LJ3');
+    </script>
+</head>
+
+<body>
+    <script src="{% static "js/script.js" %}"></script>
+    <h3 id="head">Meta Tag Generator</h3>
+
+    <div id="container">
+
+        <form action="" name="meta_form">
+            <label for="name">
+                Website Name
+            </label>
+            <input type="text" name="meta_name" id="name" placeholder="My website" required>
+            <label for="disc">
+                Website Description
+            </label>
+            <input type="text" id="disc" name="meta_disc" placeholder="My website description" required>
+            <label for="keywords">
+                Website Keywords
+            </label>
+            <input type="text" id="keywords" name="meta_key" placeholder="Website keywords seprated with ," required>
+            <label for="author">
+                Author Name
+            </label>
+            <input type="text" id="author" name="meta_author" placeholder="Website owner name" required>
+            <label for="url">
+                Website Url
+            </label>
+            <input type="url" id="url" name="meta_url" placeholder="mywebsite.com" required>
+            <label for="img-url">
+                Website Image Url
+            </label>
+            <input type="url" id="img-url" name="metaimg_url" placeholder="https://mywebsite.com/image/social.jpg"
+                required>
+            <label for="refresh-sec">
+                Wesbite Refresh Time (seconds)
+            </label>
+            <input type="number" id="refresh-sec" name="meta_refreshsec" placeholder="30">
+            <label for="engine-visit">
+                SearchEngine to revisit website after (days)
+            </label>
+            <input type="number" id="engine-visit" name="meta_enginevisit" placeholder="5">
+            <input type="button" value="Generate meta data" onclick="metadata()" id="gen-btn">
+            <textarea name="result" id="resultinp" cols="30" rows="15" placeholder="Result" readonly
+                class="resulttxt"></textarea>
+            <!-- <button id="copy-btn" class="btn-copy" name="copybtn">Copy <i class="fa-regular fa-clipboard"></i></button> -->
+            <input type="button" value="Copy 📋" id="copy-btn" class="btn-copy" name="copybtn"
+                onclick="checkresulttext()">
+        </form>
+    </div>
+    <div id="copy">
+        <h5>Copyright &copy; 2023 • Meta Tag Generator</h5>
+    </div>
+    <script>
+        let btn = document.querySelector('.btn-copy');
+        btn.addEventListener("click", function () {
+            let txt = document.querySelector('.resulttxt');
+            txt.select();
+            document.execCommand('copy');
+            document.meta_form.copybtn.value = "Copied ✓";
+            document.getElementById("copy-btn").style.backgroundColor = "green";
+        });
+    </script>
+</body>
+
+</html>

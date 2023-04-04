@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: rgb(17, 18, 28);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#head {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#container::-webkit-scrollbar {
+  display: none;
+}
+
+#container {
+  background-color: rgb(29, 28, 44);
+  padding: 50px 30px;
+  width: 800px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  margin: 0px auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+form input {
+  padding: 20px;
+  color: white;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: rgb(40, 39, 61);
+  outline: none;
+  border: 1px solid black;
+  width: 750px;
+}
+
+form input:hover {
+  border-color: rgb(10, 250, 250);
+  /* transition: all 5s ease; */
+}
+
+label {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: white;
+  margin-left: 8px;
+}
+
+#gen-btn {
+  background: linear-gradient(
+    90deg,
+    rgb(153, 22, 255),
+    rgb(66, 79, 194) 104.62%
+  );
+  padding: 13px 30px;
+  font-weight: bold;
+  transition: all 1s ease;
+  color: rgb(255, 255, 255);
+  border-color: transparent;
+  display: inline-block;
+  width: 200px;
+  justify-items: center;
+  margin: 14px auto;
+}
+
+#gen-btn:hover {
+  background-color: rgb(204, 47, 3);
+  opacity: 0.6;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#copy-btn {
+  width: 80px;
+  margin: 0px auto;
+  border-color: transparent;
+  cursor: pointer;
+  background-color: rgb(1, 64, 254);
+  padding: 10px;
+  position: relative;
+  bottom: 43px;
+  color: white;
+  font-weight: 600;
+  font-size: bold;
+  border-radius: 10px;
+  display: none;
+}
+
+#copy-btn:hover {
+  background-color: rgb(5, 251, 214);
+}
+
+textarea {
+  background-color: rgb(40, 39, 61);
+  border-radius: 12px;
+  border-color: transparent;
+  color: white;
+  resize: none;
+  padding: 20px;
+  margin-top: 10px;
+  display: none;
+}
+
+textarea:hover {
+  border-color: aqua;
+  outline: none;
+}
+
+#copy h5 {
+  color: white;
+  margin: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 961px) {
+  #container {
+    width: 100vw;
+    margin: 0px auto;
+    border-radius: 0px;
+    justify-content: center;
+  }
+
+  textarea {
+    height: 390px;
+  }
+
+  form input {
+    width: 300px;
+  }
+}
