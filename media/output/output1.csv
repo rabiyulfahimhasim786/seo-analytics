@@ -1,0 +1,11 @@
+Urls,Status_code,SSL,Expiry_date
+https://www.geaoftexas.com/,OK,https://www.geaoftexas.com/ has a valid SSL certificate!,Domain name: geaoftexas.com Expiry Date: 2023-12-03 Expiry Day: 248
+https://www.futuretrucks.us/,OK,https://www.futuretrucks.us/ has a valid SSL certificate!,Domain name: futuretrucks.us Expiry Date: 2023-12-12 Expiry Day: 257
+http://helpdesk-online.net/,OK,http://helpdesk-online.net/ has a valid SSL certificate!,Domain name: helpdesk-online.net Expiry Date: 2023-12-22 Expiry Day: 267
+https://desss-portfolio.com/,NOT OK: HTTP response code 403,https://desss-portfolio.com/ has a valid SSL certificate!,Domain name: desss-portfolio.com Expiry Date: 2023-06-07 Expiry Day: 68
+https://www.desss.com/,OK,https://www.desss.com/ has a valid SSL certificate!,Domain name: desss.com Expiry Date: 2023-05-14 Expiry Day: 44
+http://zunamelt.com/,OK,http://zunamelt.com/ has a valid SSL certificate!,Domain name: zunamelt.com Expiry Date: 2023-12-09 Expiry Day: 254
+https://trophydeals.com/,OK,https://trophydeals.com/ has a valid SSL certificate!,Domain name: trophydeals.com Expiry Date: 2023-07-27 Expiry Day: 119
+http://azuretexantool.desss-portfolio.com/,OK,http://azuretexantool.desss-portfolio.com/ has a valid SSL certificate!,Domain name: azuretexantool.desss-portfolio.com Expiry Date: 2023-06-08 Expiry Day: 70
+https://www.google.com/,OK,https://www.google.com/ has a valid SSL certificate!,Domain name: google.com Expiry Date: 2023-05-29 Expiry Day: 60
+http://transcribe.zunamelt.com/,OK,http://transcribe.zunamelt.com/ has a valid SSL certificate!,Domain name: transcribe.zunamelt.com Expiry Date: 2023-12-09 Expiry Day: 254

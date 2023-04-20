@@ -1,0 +1,23 @@
+urls,status_code
+https://livehealth.in/,OK: 200
+https://blog.livehealth.in/,OK: 200
+https://livehealth.in/login/,OK: 200
+https://livehealth.in/providers/,OK: 200
+https://livehealth.in/about/,OK: 200
+https://livehealth.in/privacy/,OK: 200
+https://livehealth.in/contact/,OK: 200
+https://livehealth.in/careers/,OK: 200
+https://livehealth.in/resetPassword/,OK: 200
+https://livehealth.in/terms-and-conditions/,OK: 200
+https://livehealth.in/lab/healthcare-nt-sickcare/,OK: 200
+https://livehealth.in/healthfeed/2017/2/13/Hello-World/,OK: 200
+https://livehealth.in/healthfeed/2017/2/13/Hello-Mars/,OK: 200
+https://livehealth.in/lab/,NOT OK: HTTP response code 404
+https://livehealth.in/lab/948-livehealth-diagnostics-Pune,OK: 200
+https://livehealth.in/lab/1118-test-Pune,OK: 200
+https://livehealth.in/lab/1119-dummy-Pune,OK: 200
+https://livehealth.in/lab/1120-abc-NaviMumbai,OK: 200
+https://livehealth.in/lab/1121-abc-NaviMumbai,OK: 200
+https://livehealth.in/lab/1122-thanos-diagnostics-Bucharest,OK: 200
+https://livehealth.in/lab/1128-jio-health-Pune,OK: 200
+https://livehealth.in/lab/1129-jio-healthcare-Pune,OK: 200
