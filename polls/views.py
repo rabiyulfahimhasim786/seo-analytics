@@ -483,7 +483,9 @@ def check_sitemap_urls(baseurls):
 def check_url(url):
     try:
         print(f"Checking {url}")
-        r = requests.get(url)
+        # headers = {'User-Agent': 'Mozilla/5.0'}
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+        r = requests.get(url, headers=headers)
 
         if r.history:
             result = (
@@ -499,7 +501,8 @@ def check_url(url):
         result = (0, url, e)
 
     return result
-dot = '/var/www/ssl/site'
+# dot = '/var/www/ssl/site'
+dot = '.'
 def main(sitemaps):
     print(sitemaps)
     for sitemap in sitemaps:
@@ -522,8 +525,9 @@ def main(sitemaps):
 def Convert(string):
     li = list(string.split(" "))
     return li
-# dot='.'
-dot = '/var/www/ssl/site'
+# dot='.' 
+# please check above mentioned paths and make those changes
+# dot = '/var/www/ssl/site'
 def sitedata(request):
     documents = Sitemapxml.objects.all()
     for obj in documents:
@@ -556,13 +560,55 @@ def sitedata(request):
 
 
 
+# def sitemap_xml_data(request):
+#     if request.method == 'POST':
+#         # documents = Checker.objects.all()
+#         form = SitemapxmlForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('sitedata')
+            
+            
+#     else:
+#         form = SitemapxmlForm()
+#         documents = Sitemapxml.objects.all().order_by('-id')
+#     return render(request, 'index.html', {
+#         'form': form, 'documents': documents
+#     })
+
 def sitemap_xml_data(request):
     if request.method == 'POST':
         # documents = Checker.objects.all()
         form = SitemapxmlForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('sitedata')
+            # return redirect('sitedata')
+            documents = Sitemapxml.objects.all()
+            for obj in documents:
+                baseurls = obj.url
+            sitemapurl = Convert(baseurls)
+            print(sitemapurl)
+
+            main(sitemapurl)
+
+            file = pd.read_csv(dot+"/media/csv/data.csv")
+            departments = [ 404, 400]
+            filterdata=file.loc[file['Status_Code'].isin(departments)]
+            headerList = ['Status_Code', 'URL','Message']
+            filterdata.to_csv(dot+"/media/csv/data1.csv", header=headerList, index=None, encoding='utf-8')
+            filedata = dot+"/media/csv/data1.csv"
+            dfjson = pd.read_csv(filedata , index_col=None, header=0)
+            json_records = dfjson.reset_index().to_json(orient ='records')
+            data = []
+            data = json.loads(json_records)
+            nofilterdfjson = pd.read_csv(dot+"/media/csv/data.csv", index_col=None, header=0)
+            nonfilterjson_records = nofilterdfjson.reset_index().to_json(orient ='records')
+            nonfilterdata = []
+            nonfilterdata = json.loads(nonfilterjson_records)
+                        # return render(request, 'index.html',) 
+                        # main(baseurls)
+           
+            return render(request, 'data.html',{'data': data, 'd': nonfilterdata }) #'d': nonfilterdata })
             
             
     else:
