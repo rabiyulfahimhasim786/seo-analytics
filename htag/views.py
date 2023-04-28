@@ -44,15 +44,24 @@ class TagView(ListCreateAPIView):
         h1_tags = soup.find_all('h1')
         h2_tags = soup.find_all('h2')
         h3_tags = soup.find_all('h3')
+        title_tags = soup.find_all('title')
+        backlink_tags = soup.find_all('a')
+        description_tags = soup.find_all('meta', attrs={'name': ['description', 'Description']})
 
         h1_count = len(h1_tags)
         h2_count = len(h2_tags)
         h3_count = len(h3_tags)
+        title_count = len(title_tags)
+        backlink_count = len(backlink_tags)
+        description_count = len(description_tags)
 
         data = {
             "Number of h1 tags": h1_count,
             "Number of h2 tags": h2_count,
             "Number of h3 tags": h3_count,
+            "Number of title tags": title_count,
+            "backlink count": backlink_count,
+            "Number of description tags": description_count,
            
             "headings": [],
             "Word count": []
@@ -88,6 +97,27 @@ class TagView(ListCreateAPIView):
             data["h3_status"] = "more_than_one"
         else:
             data["h3_status"] = "present_once"
+
+        if title_count == 0:
+            data["title_status"] = "not_present"
+        elif title_count > 1:
+            data["title_status"] = "more_than_one"
+        else:
+            data["title_status"] = "present_once"
+
+        if backlink_count == 0:
+            data["backlink_status"] = "not_present"
+        elif backlink_count > 1:
+            data["backlink_status"] = "more_than_one"
+        else:
+            data["backlink_status"] = "present_once"
+        
+        if description_count == 0:
+            data["description_status"] = "not_present"
+        elif description_count > 1:
+            data["description_status"] = "more_than_one"
+        else:
+            data["description_status"] = "present_once"
 
         # serializer = ChatSerializer(data, many=True)
         # data = serializer.data
