@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'sitemap.apps.SitemapConfig',
     'website.apps.WebsiteConfig',
     'htag.apps.HtagConfig',
     'django.contrib.admin',
